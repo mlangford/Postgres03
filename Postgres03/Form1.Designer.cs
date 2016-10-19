@@ -30,9 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbISA = new System.Windows.Forms.ListBox();
+            this.lbAcc = new System.Windows.Forms.ListBox();
             this.lbCust = new System.Windows.Forms.ListBox();
             this.btnAcc = new System.Windows.Forms.Button();
+            this.rbHome = new System.Windows.Forms.RadioButton();
+            this.rbWork = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -57,16 +59,16 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Accounts";
             // 
-            // lbISA
+            // lbAcc
             // 
-            this.lbISA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbISA.FormattingEnabled = true;
-            this.lbISA.ItemHeight = 25;
-            this.lbISA.Location = new System.Drawing.Point(349, 211);
-            this.lbISA.Margin = new System.Windows.Forms.Padding(4);
-            this.lbISA.Name = "lbISA";
-            this.lbISA.Size = new System.Drawing.Size(362, 104);
-            this.lbISA.TabIndex = 11;
+            this.lbAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAcc.FormattingEnabled = true;
+            this.lbAcc.ItemHeight = 25;
+            this.lbAcc.Location = new System.Drawing.Point(349, 211);
+            this.lbAcc.Margin = new System.Windows.Forms.Padding(4);
+            this.lbAcc.Name = "lbAcc";
+            this.lbAcc.Size = new System.Drawing.Size(362, 104);
+            this.lbAcc.TabIndex = 11;
             // 
             // lbCust
             // 
@@ -78,10 +80,10 @@
             this.lbCust.Name = "lbCust";
             this.lbCust.Size = new System.Drawing.Size(282, 104);
             this.lbCust.TabIndex = 12;
+            this.lbCust.SelectedIndexChanged += new System.EventHandler(this.lbCust_SelectedIndexChanged);
             // 
             // btnAcc
             // 
-            this.btnAcc.Enabled = false;
             this.btnAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcc.Location = new System.Drawing.Point(214, 169);
             this.btnAcc.Margin = new System.Windows.Forms.Padding(4);
@@ -90,15 +92,42 @@
             this.btnAcc.TabIndex = 13;
             this.btnAcc.Text = "Show Accounts";
             this.btnAcc.UseVisualStyleBackColor = true;
+            this.btnAcc.Click += new System.EventHandler(this.btnAcc_Click);
+            // 
+            // rbHome
+            // 
+            this.rbHome.AutoSize = true;
+            this.rbHome.Checked = true;
+            this.rbHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbHome.Location = new System.Drawing.Point(438, 16);
+            this.rbHome.Name = "rbHome";
+            this.rbHome.Size = new System.Drawing.Size(245, 24);
+            this.rbHome.TabIndex = 14;
+            this.rbHome.TabStop = true;
+            this.rbHome.Text = "Connect to BoG on localhost";
+            this.rbHome.UseVisualStyleBackColor = true;
+            // 
+            // rbWork
+            // 
+            this.rbWork.AutoSize = true;
+            this.rbWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbWork.Location = new System.Drawing.Point(438, 46);
+            this.rbWork.Name = "rbWork";
+            this.rbWork.Size = new System.Drawing.Size(250, 24);
+            this.rbWork.TabIndex = 15;
+            this.rbWork.Text = "Connect to BoG on ces-web3";
+            this.rbWork.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 351);
+            this.ClientSize = new System.Drawing.Size(745, 368);
+            this.Controls.Add(this.rbWork);
+            this.Controls.Add(this.rbHome);
             this.Controls.Add(this.btnAcc);
             this.Controls.Add(this.lbCust);
-            this.Controls.Add(this.lbISA);
+            this.Controls.Add(this.lbAcc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -106,6 +135,7 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,9 +145,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lbISA;
+        private System.Windows.Forms.ListBox lbAcc;
         private System.Windows.Forms.ListBox lbCust;
         private System.Windows.Forms.Button btnAcc;
+        private System.Windows.Forms.RadioButton rbHome;
+        private System.Windows.Forms.RadioButton rbWork;
     }
 }
 
