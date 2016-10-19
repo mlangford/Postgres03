@@ -80,7 +80,6 @@
             this.lbCust.Name = "lbCust";
             this.lbCust.Size = new System.Drawing.Size(282, 104);
             this.lbCust.TabIndex = 12;
-            this.lbCust.SelectedIndexChanged += new System.EventHandler(this.lbCust_SelectedIndexChanged);
             // 
             // btnAcc
             // 
